@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Verification</title>
+</head>
+<style>
+        .title {
+                background-color: blue;
+        }
+        .header {
+                background-color: red;
+        }
+        .body {
+                background-color: yellow;
+        }
+</style>
+<body>
+	<h1>Password Verification</h1>
+	<form onsubmit="checkPasswords(event)">
+		<label for="password">Password:</label>
+		<input type="password" id="password" required>
+		<p></p>
+		<label for="password-confirm">Confirm Password:</label>
+		<input type="password" id="password-confirm" required>
+		<p></p>
+		<input type="submit" value="Submit">
+	</form>
+
+	<script>
+		function checkPasswords(event) {
+			event.preventDefault();
+			const password = document.getElementById("password").value;
+			const confirmPassword = document.getElementById("password-confirm").value;
+
+			if (password.length < 8 || password !== confirmPassword) {
+				alert("Passwords do not match or are not at least 8 characters long.");
+			} else {
+				alert("Passwords matched!");
+			}
+		}
+	</script>
+</body>
+</html>
+
+
