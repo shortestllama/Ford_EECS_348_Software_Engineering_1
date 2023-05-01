@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice 2</title>
+	<link href="MyStyleSheet.css" rel="stylesheet">
+</head>
+<style>
+        .title {
+                background-color: blue;
+        }
+        .header {
+                background-color: red;
+        }
+        .body {
+                background-color: yellow;
+        }
+</style>
+<body>
+	<div class="title">
+		<h1 align="center">This is my color changing table!</h1>
+	</div>
+	<div class="header">
+		<h2 align="center">
+		Here is my paragraph of dummy text!
+		</h2>
+	</div>
+	<div>
+		<p id="content" align="center">
+		It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way — in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.
+		</p>
+	</div>
+	<div class="body">
+		<label for="text-color-r">Text Color R:</label>
+		<input type="text" id="text-color-r" placeholder="0-255"><br>
+		<label for="text-color-g">Text Color G:</label>
+		<input type="text" id="text-color-g" placeholder="0-255"><br>
+		<label for="text-color-b">Text Color B:</label>
+		<input type="text" id="text-color-b" placeholder="0-255"><br>
+		<label for="border-color-r">Border Color R:</label>
+		<input type="text" id="border-color-r" placeholder="0-255"><br>
+		<label for="border-color-g">Border Color G:</label>
+		<input type="text" id="border-color-g" placeholder="0-255"><br>
+		<label for="border-color-b">Border Color B:</label>
+		<input type="text" id="border-color-b" placeholder="0-255"><br>
+		<label for="border-width">Border Width:</label>	
+		<input type="text" id="border-width" placeholder="1px"><br>
+		<button onclick="changeProperties()">Change Properties</button>
+		<script>
+			function changeProperties() {
+				const textcolor_r = document.getElementById("text-color-r").value;
+				const textcolor_g = document.getElementById("text-color-g").value;
+				const textcolor_b = document.getElementById("text-color-b").value;
+				const bordercolor_r = document.getElementById("border-color-r").value;
+				const bordercolor_g = document.getElementById("border-color-g").value;
+				const bordercolor_b = document.getElementById("border-color-b").value;
+				const borderwidth = document.getElementById("border-width").value;
+				
+				document.documentElement.style.setProperty("--text-color", "rgb("+textcolor_r+", "+textcolor_g+", "+textcolor_b+")");
+				document.documentElement.style.setProperty("--border-color", "rgb("+bordercolor_r+", "+bordercolor_g+", "+bordercolor_b+")");
+				document.documentElement.style.setProperty("--border-width", borderwidth);
+			}
+		</script>
+	</div>
+	
+</body>
+</html>
+
